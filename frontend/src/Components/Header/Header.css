@@ -3,13 +3,14 @@
    
      justify-content: space-between;  
     align-items: center;
-    background-color:  #1FC193;
+    /* background-color:  #071454; */
+    background-color:  #0A66C2;
   }
   .headline{
     display: flex;
     justify-content: center; 
     align-items: center;
-    color: black;
+    color: white;
 
 
   }
@@ -30,7 +31,7 @@
   .header > a > svg {
     font-size: 2vmax;
     transition: all 0.5s;
-    color: rgba(0, 0, 0, 0.445);
+    color: white;
   }
   
   .header > a > svg:hover {

@@ -6,7 +6,7 @@ const cloudinary = require("cloudinary");
 
 exports.register = async (req, res) => {
   try {
-    const { name, email, password, avatar } = req.body;
+    const { name,gender,country,birthYear, email, password, avatar } = req.body;
 
     let user = await User.findOne({ email });
     if (user) {
@@ -21,6 +21,9 @@ exports.register = async (req, res) => {
 
     user = await User.create({
       name,
+      gender,
+      country,
+      birthYear,
       email,
       password,
       avatar: { public_id: myCloud.public_id, url: myCloud.secure_url },
@@ -175,13 +178,23 @@ exports.updateProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
 
-    const { name, email, avatar } = req.body;
+    const {name,gender,country,birthYear, email, avatar } = req.body;
 
     if (name) {
       user.name = name;
     }
     if (email) {
       user.email = email;
+    }
+    if (gender) {
+      user.gender = gender;
+    }
+    
+    if (country) {
+      user.country = country;
+    }
+    if (birthYear) {
+      user.birthYear = birthYear;
     }
 
     if (avatar) {

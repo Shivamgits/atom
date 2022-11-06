@@ -8,6 +8,9 @@ import { useAlert } from "react-alert";
 
 const Register = () => {
   const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+  const [country, setCountry] = useState("");
+  const [birthYear, setBirth] = useState("");
   const [email, setEmail] = useState("");
   const [avatar, setAvatar] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +34,7 @@ const Register = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(registerUser(name, email, password, avatar));
+    dispatch(registerUser(name,gender,country,birthYear, email, password, avatar));
   };
 
   useEffect(() => {
@@ -54,7 +57,7 @@ const Register = () => {
             fontFamily: "BioRhyme",
           }}
         >
-          twick
+          Atom
         </Typography>
       </span>
 
@@ -64,11 +67,11 @@ const Register = () => {
             src={avatar}
             alt="User"
             sx={{ height: "10vmax", width: "10vmax" }}
-            style={{ color: "white", backgroundColor: "#1FC193" }}
+            style={{ color: "white", backgroundColor: "#0C67C2" }}
           />
 
           <input
-            style={{ color: "black", backgroundColor: "#1FC193" }}
+            style={{ color: "black", backgroundColor: "#0C67C2" }}
             type="file"
             accept="image/*"
             onChange={handleImageChange}
@@ -81,6 +84,30 @@ const Register = () => {
             className="registerInputs"
             required
             onChange={(e) => setName(e.target.value)}
+          />
+           <input
+            type="text"
+            value={gender}
+            placeholder="gender"
+            className="registerInputs"
+            required
+            onChange={(e) => setGender(e.target.value)}
+          />
+           <input
+            type="text"
+            value={country}
+            placeholder="country"
+            className="registerInputs"
+            required
+            onChange={(e) => setCountry(e.target.value)}
+          />
+           <input
+            type="text"
+            value={birthYear}
+            placeholder="birthYear"
+            className="registerInputs"
+            required
+            onChange={(e) => setBirth(e.target.value)}
           />
 
           <input
@@ -109,7 +136,7 @@ const Register = () => {
             disabled={loading}
             style={{
               color: "white",
-              backgroundColor: "#1FC193",
+              backgroundColor: "#0C67C2",
               paddingLeft: "3rem",
               paddingRight: "3rem",
               paddingTop: "0.5rem",

@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <>
     <span className="headline" variant="h2" style={{ padding: "2vmax" ,color: "black"  }}>
-       <Typography style={{ fontSize:"2.5rem", fontStyle: "italic",fontFamily: 'BioRhyme'}}>twick</Typography> 
+       <Typography style={{ fontSize:"2.5rem", fontStyle: "italic",fontFamily: 'BioRhyme'}}>Atom</Typography> 
       </span>
  
     <div className="login">

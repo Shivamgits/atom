@@ -8,7 +8,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter a name"],
   },
-
+  gender: {
+    type: String,
+    required: [true, "Please enter a gender"],
+  },
+  country: {
+    type: String,
+    required: [true, "Please enter a country"],
+  },
+  birthYear: {
+    type: Number,
+    required: [true, "Please enter a year"],
+  },
   avatar: {
     public_id: String,
     url: String,

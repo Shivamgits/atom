@@ -31,7 +31,7 @@ const Search = () => {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <Button disabled={loading} style={{color:"white",backgroundColor: "#1FC193"}} type="submit">
+        <Button disabled={loading} style={{color:"white",backgroundColor: "#0A66C2"}} type="submit">
           Search
         </Button>
 

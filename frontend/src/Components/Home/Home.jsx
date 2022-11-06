@@ -64,10 +64,11 @@ const Home = () => {
             />
           ))
         ) : (
-          <Typography variant="h6">No posts yet</Typography>
+          <Typography variant="h3">No posts yet</Typography>
         )}
       </div>
       <div className="homeright">
+        Global Users
         {users && users.length > 0 ? (
           users.map((user) => (
             <User

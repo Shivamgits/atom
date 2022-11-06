@@ -57,7 +57,7 @@ const UpdatePassword = () => {
         />
 
         <Button disabled={loading}
-          style={{backgroundColor:"#1FC193",color:"white"}}
+          style={{backgroundColor:"#0A66C2",color:"white"}}
         type="submit">
           Change Password
         </Button>

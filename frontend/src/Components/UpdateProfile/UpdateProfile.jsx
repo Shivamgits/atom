@@ -15,6 +15,9 @@ const UpdateProfile = () => {
   } = useSelector((state) => state.like);
 
   const [name, setName] = useState(user.name);
+  const [gender, setGender] = useState(user.gender);
+  const [country, setCountry] = useState(user.country);
+  const [birthYear, setBirth] = useState(user.birthYear);
   const [email, setEmail] = useState(user.email);
   const [avatar, setAvatar] = useState("");
   const [avatarPrev, setAvatarPrev] = useState(user.avatar.url);
@@ -39,7 +42,7 @@ const UpdateProfile = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await dispatch(updateProfile(name, email, avatar));
+    await dispatch(updateProfile(name,gender,country,birthYear, email, avatar));
     dispatch(loadUser());
   };
 
@@ -84,6 +87,30 @@ const UpdateProfile = () => {
           required
           onChange={(e) => setName(e.target.value)}
         />
+        <input
+            type="text"
+            value={gender}
+            placeholder="gender"
+            className="registerInputs"
+            required
+            onChange={(e) => setGender(e.target.value)}
+          />
+           <input
+            type="text"
+            value={country}
+            placeholder="country"
+            className="registerInputs"
+            required
+            onChange={(e) => setCountry(e.target.value)}
+          />
+           <input
+            type="text"
+            value={birthYear}
+            placeholder="birthYear"
+            className="registerInputs"
+            required
+            onChange={(e) => setBirth(e.target.value)}
+          />
 
         <input
           type="email"

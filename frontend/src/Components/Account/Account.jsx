@@ -112,7 +112,7 @@ const Account = () => {
 
         <Button variant="contained" 
         onClick={logoutHandler}
-        style={{  backgroundColor:"#1FC193"}}
+        style={{  backgroundColor:"#0A66C2"}}
         >
           Logout
         </Button>
