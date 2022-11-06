@@ -1,0 +1,92 @@
+.headline{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding-top:0;
+ height: 0.6rem;
+ background-color:  #1FC193;
+ font-size:12rem;
+}
+
+.register {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vmax;
+    box-sizing: border-box;
+  }
+  
+  .registerForm {
+  
+    background-color: white;
+    box-shadow: -1rem 0 3rem rgb(209, 208, 208);
+    width: 50%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 2vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .registerInputs {
+    box-sizing: border-box;
+    padding: 1vmax 2vmax;
+    width: 80%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin: 2vmax;
+    font: 100 1.2rem "Roboto", sans-serif;
+    outline: none;
+  }
+  
+  .registerForm > input[type="file"] {
+   
+    border-radius: 8px;
+    margin: 2vmax;
+  }
+  
+  .registerForm > input[type="file"]::-webkit-file-upload-button {
+    background-color:  #1FC193;
+    color: white;
+    width: 100%;
+    padding: 1vmax;
+    border-radius: 10px;
+    border: none;
+    font: 100 1.2rem "Roboto", sans-serif;
+  }
+  
+  .registerForm > a {
+    align-self: flex-end;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.342);
+    margin: 2vmax;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .registerForm {
+      width: 100%;
+    }
+  
+    .registerForm > input {
+      padding: 4vw 8vw;
+      margin: 2vmax;
+      font: 100 1.2rem "Roboto", sans-serif;
+      margin: 4vw;
+    }
+  
+    .registerForm > input[type="file"] {
+      width: 80%;
+    }
+  
+    .registerForm > input[type="file"]::-webkit-file-upload-button {
+      width: 70%;
+    }
+  
+    .registerForm > a {
+      align-self: center;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.342);
+    }
+  }

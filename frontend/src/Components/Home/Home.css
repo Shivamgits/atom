@@ -1,0 +1,59 @@
+.home {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 2fr 300px;
+    height: 100vh;
+    
+  }
+  
+  .homeleft {
+   
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vmax;
+    box-sizing: border-box;
+   
+  }
+  .homeright {
+    padding: 2vmax;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color:#eefaee;
+
+  
+  }
+  
+  .homeUser {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.507);
+    transition: all 0.5s;
+  }
+  .homeUser > img {
+    height: 3vmax;
+    width: 3vmax;
+    margin: 1vmax;
+    border-radius: 100%;
+    border: 3px solid #1FC193;
+  }
+  
+  .homeUser:hover {
+    transform: translateY(-10px);
+  }
+  
+  @media screen and (max-width: 600px) {
+   
+  
+    .homeleft {
+      padding: 0;
+      min-height: 90vh;
+      width: 100vw;
+     
+    }
+    .homeright{
+      display: none;
+    }
+  }
