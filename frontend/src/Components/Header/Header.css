@@ -4,7 +4,15 @@
      justify-content: space-between;  
     align-items: center;
     /* background-color:  #071454; */
-    background-color:  #0A66C2;
+    background-color:  #F7BB07;
+   
+  }
+  a {
+    /* color: #FFF; */
+    text-decoration: none;
+  }
+  a:hover {
+     color: rgb(4, 4, 12)
   }
   .headline{
     display: flex;

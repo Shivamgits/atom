@@ -18,7 +18,13 @@ const Header = () => {
   return (
     <div className="header">
       <Link to="/" onClick={() => setTab("/")}>
-        {tab === "/" ? <WidgetsOutlinedIcon style={{ color: "black" }} /> : <WidgetsOutlinedIcon />}
+        {tab === "/" ?
+            <div style={{ color: "black" }}>Atom</div>
+        // <WidgetsOutlinedIcon style={{ color: "black" }} /> 
+        :
+                <div style={{ color: "white" }}>Atom</div>
+        // <WidgetsOutlinedIcon />
+      }
       </Link>
 
       <Link to="/newpost" onClick={() => setTab("/newpost")}>

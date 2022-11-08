@@ -65,7 +65,7 @@ const Login = () => {
         </Link>
 
         <Button type="submit"
-         style={{color:"white",backgroundColor:"#1FC193"
+         style={{color:"white",backgroundColor:"#0C67C2"
          ,paddingLeft:"3rem",
          paddingRight:"3rem",
          paddingTop:"0.5rem",

@@ -8,7 +8,25 @@
     box-sizing: border-box;
     
   }
-  
+  .radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1vmax 2vmax;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: 2vmax;
+    font: 100 1.2rem "Roboto", sans-serif;
+    outline: none;
+  }
+  .radio1{
+    margin-right: 35px;
+  }
+  .radio2{
+    margin-right: 10px;
+  }
   .updateProfileForm {
     background-color: white;
     width: 50%;
@@ -50,6 +68,16 @@
   @media screen and (max-width: 600px) {
     .updateProfileForm {
       width: 100%;
+    }
+    .radio{
+      display: flex;
+      flex-direction: column;}
+    .radio2{
+      padding: 10px;
+    }
+    .radio3{
+      display: flex;
+      flex-direction: column;
     }
   
     .updateProfileForm > input {

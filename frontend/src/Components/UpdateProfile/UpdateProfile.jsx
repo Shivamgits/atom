@@ -1,10 +1,15 @@
-import { Avatar, Typography, Button } from "@mui/material";
+import { Avatar, Typography, Button, Select, MenuItem, Input, InputLabel, FormControl } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./UpdateProfile.css";
 import { loadUser, updateProfile } from "../../Actions/User";
 import { useAlert } from "react-alert";
 import Loader from "../Loader/Loader";
+import countries from "i18n-iso-countries";
+// Import the languages you want to use
+import enLocale from "i18n-iso-countries/langs/en.json";
+import itLocale from "i18n-iso-countries/langs/it.json";
+
 
 const UpdateProfile = () => {
   const { loading, error, user } = useSelector((state) => state.user);
@@ -40,10 +45,38 @@ const UpdateProfile = () => {
     };
   };
 
+  const selectCountryHandler = (value) => setCountry(value);
+  // Have to register the languages you want to use
+  countries.registerLocale(enLocale);
+  countries.registerLocale(itLocale);
+
+  // Returns an object not a list
+  const countryObj = countries.getNames("en", { select: "official" });
+
+  const countryArr = Object.entries(countryObj).map(([key, value]) => {
+    return {
+      label: value,
+      value: key
+    };
+  });
+
+
   const submitHandler = async (e) => {
     e.preventDefault();
     await dispatch(updateProfile(name,gender,country,birthYear, email, avatar));
     dispatch(loadUser());
+  };
+  const generateYearOptions = () => {
+    const arr = [];
+  
+    const startYear = 1900;
+    const endYear = new Date().getFullYear();
+  
+    for (let i = endYear; i >= startYear; i--) {
+      arr.push(<option value={i}>{i}</option>);
+    }
+  
+    return arr;
   };
 
   useEffect(() => {
@@ -87,30 +120,46 @@ const UpdateProfile = () => {
           required
           onChange={(e) => setName(e.target.value)}
         />
-        <input
-            type="text"
-            value={gender}
-            placeholder="gender"
-            className="registerInputs"
-            required
-            onChange={(e) => setGender(e.target.value)}
-          />
-           <input
-            type="text"
-            value={country}
-            placeholder="country"
-            className="registerInputs"
-            required
-            onChange={(e) => setCountry(e.target.value)}
-          />
-           <input
-            type="text"
-            value={birthYear}
-            placeholder="birthYear"
-            className="registerInputs"
-            required
-            onChange={(e) => setBirth(e.target.value)}
-          />
+       <FormControl  className="registerInputs">
+    <InputLabel htmlFor="name-multiple">Gender</InputLabel>
+<Select
+       style={{marginBottom: "20px"}}
+        
+        value={gender}
+       
+        input={<Input id="name-multiple" />}
+        onChange={(e) => setGender(e.target.value)}
+      >
+         <MenuItem value="Male">Male</MenuItem>
+    <MenuItem value="Female">Female</MenuItem>
+    <MenuItem value="Other">Other</MenuItem>
+      </Select>
+      </FormControl>
+        <FormControl  className="registerInputs">
+    <InputLabel htmlFor="name-multiple">Country</InputLabel>
+<Select
+        value={country}
+        input={<Input id="name-multiple" />}
+        onChange={(e) => selectCountryHandler(e.target.value)}
+      >
+        {!!countryArr?.length &&
+          countryArr.map(({ label, value }) => (
+            <MenuItem key={label} value={value}>
+              {label}
+            </MenuItem>
+          ))}
+      </Select>
+      </FormControl>
+
+          <select
+  className='registerInputs'
+  name='BirthYear'
+  onChange={(e) => setBirth(e.target.value)}
+  value={birthYear}
+>
+  <option value='0'>Year</option>
+  {generateYearOptions()}
+</select>
 
         <input
           type="email"
