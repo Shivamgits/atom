@@ -11,7 +11,7 @@ import {
 } from "@mui/icons-material";
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import AddAPhotoOutlinedIcon from '@mui/icons-material/AddAPhotoOutlined';
-import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 const Header = () => {
   const [tab, setTab] = useState(window.location.pathname);
@@ -19,11 +19,11 @@ const Header = () => {
     <div className="header">
       <Link to="/" onClick={() => setTab("/")}>
         {tab === "/" ?
-            <div style={{ color: "black" }}>Atom</div>
-        // <WidgetsOutlinedIcon style={{ color: "black" }} /> 
+          
+         <HomeOutlinedIcon style={{ color: "black" }} /> 
         :
-                <div style={{ color: "white" }}>Atom</div>
-        // <WidgetsOutlinedIcon />
+              
+         <HomeOutlinedIcon />
       }
       </Link>
 

@@ -7,6 +7,7 @@ import Post from '../Post/Post'
 import User from '../User/User'
 import {useAlert} from 'react-alert'
 import "./Home.css"
+import ProfileInfo from '../ProfileInfo/ProfileInfo'
 const Home = () => {
   const dispatch = useDispatch();
  
@@ -23,8 +24,11 @@ const Home = () => {
   const { error: likeError, message } = useSelector((state) => state.like);
 
   useEffect(() => {
+    
     dispatch(getFollowingPosts());
     dispatch(getAllUsers());
+    
+
   }, [dispatch]);
 
   useEffect(() => {
@@ -49,6 +53,10 @@ const Home = () => {
   
     <div className="home">
       <div className="homeleft">
+        <div className="profile4">
+        <ProfileInfo/> 
+        </div>
+        <div className="posts">
         {posts && posts.length > 0 ? (
           posts.map((post) => (
             <Post
@@ -64,8 +72,16 @@ const Home = () => {
             />
           ))
         ) : (
-          <Typography variant="h3">No posts yet</Typography>
+          <div className="empty_state">
+ 
+  <h3 className="dd">No posts</h3>
+  <p className="para">There have been no posts in this section yet</p>
+
+</div>
         )}
+        </div>
+    
+       
       </div>
       <div className="homeright">
         Global Users

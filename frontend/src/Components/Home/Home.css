@@ -1,4 +1,5 @@
 .home {
+  margin-top: 0px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 2fr 350px;
@@ -9,13 +10,18 @@
   .homeleft {
     margin-top: 0px;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* display: flex;
+    flex-direction: row;
+    align-items: center; */
     padding: 2vmax;
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 2fr 830px;
    
    
+  }
+  .profile4{
+    margin-top: 12px;
   }
   .homeright {
    
@@ -49,11 +55,54 @@
   .homeUser:hover {
     transform: translateY(-10px);
   }
-  
+
+  .empty_state{
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  margin-right: 15rem;
+  margin-top: 5rem;
+                          }
+    .dd{
+      margin: 8px 0px;
+      text-align: center;
+      font-weight: normal;
+      font-size: 20px;
+    }
+    .para{
+      font-size: 14px;
+      margin: 0px;
+      color: #999;
+      text-align: center;
+    }
+   
+
   @media screen and (max-width: 600px) {
    
+  .empty_state{
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  margin-right: 0.5rem;
+  margin-top: 5rem;
+   }
+   .dd{
+   
+    font-size: 2rem;
+  }
+  .para{
+    font-size: 1.2rem;
+  
+  }
+                          
+     .profile4{
+      display: none;
+     }
   
     .homeleft {
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
       padding: 0;
       min-height: 90vh;
       width: 100vw;

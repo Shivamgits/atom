@@ -8,6 +8,7 @@ import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
 import "./Account.css";
+import ProfileInfo from "../ProfileInfo/ProfileInfo.jsx";
 
 const Account = () => {
   const dispatch = useDispatch();
@@ -59,6 +60,7 @@ const Account = () => {
   ) : (
     <div className="account">
       <div className="accountleft">
+       
         {posts && posts.length > 0 ? (
           posts.map((post) => (
             <Post
@@ -76,10 +78,16 @@ const Account = () => {
             />
           ))
         ) : (
-          <Typography variant="h6">You have not made any post</Typography>
+          <div className="empty_state">
+ 
+          <h3 className="dd">No posts</h3>
+          <p className="para">There have been no posts in this section yet</p>
+        
+        </div>
         )}
       </div>
       <div className="accountright">
+     
         <Avatar
           src={user.avatar.url}
           sx={{ height: "8vmax", width: "8vmax" }}
